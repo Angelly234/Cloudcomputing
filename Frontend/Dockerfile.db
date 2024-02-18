@@ -1,0 +1,9 @@
+# Use a specific version of the MySQL image, specifying the platform
+FROM --platform=linux/amd64 mysql:5.7
+
+ENV MYSQL_DATABASE=db_sokeng \
+    MYSQL_ROOT_PASSWORD=sokeng \
+    MYSQL_USER=sokeng \
+    MYSQL_PASSWORD=sokeng
+
+COPY ./final_cs262.sql /docker-entrypoint-initdb.d/final_cs262.sql

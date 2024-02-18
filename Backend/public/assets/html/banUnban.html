@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  
+  <h2>Users</h2>
+  <ul id="userList">
+    <li>John <button onclick="banUser('John')">Ban</button></li>
+    <li>Jane <button onclick="banUser('Jane')">Ban</button></li>
+    <li>Mark <button onclick="banUser('Mark')">Ban</button></li>
+  </ul>
+  
+  <script>
+    // Array to store the list of banned users
+    let bannedUsers = [];
+
+    // Function to ban a user
+    function banUser(username) {
+      bannedUsers.push(username);
+      alert(username + ' has been banned.');
+      updateUserList();
+    }
+
+    // Function to unban a user
+    function unbanUser(username) {
+      const index = bannedUsers.indexOf(username);
+      if (index > -1) {
+        bannedUsers.splice(index, 1);
+        alert(username + ' has been unbanned.');
+        updateUserList();
+      }
+    }
+
+    // Function to update the user list
+    function updateUserList() {
+      const userList = document.getElementById('userList');
+      userList.innerHTML = '';
+
+      // Generate the list of users
+      for (let i = 0; i < bannedUsers.length; i++) {
+        const username = bannedUsers[i];
+        const listItem = document.createElement('li');
+        listItem.textContent = username;
+        const unbanButton = document.createElement('button');
+        unbanButton.textContent = 'Unban';
+        unbanButton.onclick = function() {
+          unbanUser(username);
+        };
+        listItem.appendChild(unbanButton);
+        userList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>

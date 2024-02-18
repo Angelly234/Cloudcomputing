@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+    app_laravel:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: "laravel_container"
+        ports:
+            - 8088:80
+        volumes:
+            - ./:/var/www/html
+
+    db_mysql:
+        build:
+            context: .
+            dockerfile: Dockerfile.db # Use the new Dockerfile for MySQL
+        restart: always
+        ports:
+            - "3309:3306"
+        environment:
+            MYSQL_DATABASE: db_sokeng
+            MYSQL_ROOT_PASSWORD: sokeng
+            MYSQL_USER: sokeng
+            MYSQL_PASSWORD: sokeng
+        volumes:
+            - D:\CS_Sophomore_class_PIU\CS_Sophomore_Sem4\CS262_S2_AdvancedWeb_RothanaSoth\student_research_final_project\Frontend/final_cs262.sql:/docker-entrypoint-initdb.d/final_cs262.sql

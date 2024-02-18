@@ -1,0 +1,96 @@
+.container {
+    /* background-color: rgba(235, 235, 235, 0.767); */
+    border-radius: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  /* input {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  input[type="submit"] {
+    margin-top: 10px;
+  }
+  
+  input[type="radio"] {
+    margin: 0 5px;
+  } */
+  
+/* sign in form  */
+h1 {
+margin-bottom: 30px;
+}
+
+input[type="submit"] {
+margin-top: 10px;
+}
+
+a {
+display: block;
+margin-top: 10px;
+}
+/* 
+input {
+margin-bottom: 10px;
+width: 100%;
+padding: 10px;
+font-size: 16px;
+} */
+
+
+
+/* .container {
+  width: 600px;
+  margin: 0 auto;
+} */
+
+.caption {
+  font-weight: bold;
+}
+
+.article {
+  margin-bottom: 20px;
+}
+
+.published {
+  margin-bottom: 20px;
+}
+
+.researchers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profile {
+  text-align: center;
+}
+
+.name {
+  margin-top: 5px;
+}
+
+.source {
+  float: right;
+  width: 200px;
+  height: 200px;
+  background-image: url("source-background.jpg");
+  background-size: cover;
+  text-align: center;
+}
+
+.pdf {
+  margin-top: 175px;
+  color: white;
+  font-weight: bold;
+}
